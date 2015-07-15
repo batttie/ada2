@@ -1,3 +1,3 @@
 module.exports = (robot) ->
-  robot.hear /pss/i, (res) ->
-    res.send #{channel} pss
+  robot.hear /pss/i, (msg) ->
+    msg.send #{channel} pss
