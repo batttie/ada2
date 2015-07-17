@@ -2,9 +2,6 @@
 #
 #
 module.exports = (robot) ->
-  robot.hear /pss/i, (msg) ->
-    msg.reply envelope.room
-    
+  robot.hear /room/i,(msg) ->
+    msg.reply room
   
-  robot.topic (res) ->
-   res.send "#{res.message.text}? That's a Paddlin'"
