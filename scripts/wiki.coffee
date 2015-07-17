@@ -8,5 +8,4 @@ module.exports = (robot) ->
          .get() (err, msg, body) ->
          data = JSON.parse(body)
          res.send data
-   console.log MSG
-   res.send MSG
+   console.log msg
