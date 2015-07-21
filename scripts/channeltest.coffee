@@ -3,6 +3,6 @@
 #
 module.exports = (robot) ->
   robot.hear /room/i,(msg) ->
-    room = envelope.room
+    room = #{channel.name}
     msg.reply room
   
