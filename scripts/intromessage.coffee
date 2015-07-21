@@ -4,8 +4,9 @@
 module.exports = (robot) ->
   robot.enter (msg) ->
     room = msg.message.room
-    if room = "testing"
-      msg.send "hi you are in testing"
-    else
+    switch
+      when room = "testing" then msg.reply "hi you are in #{room}  This is a public room designed for testing mine and my counterparts varius commands"
+      when room = "tresses" then msg.reply "hi you are in #{room}  This is a private room designed for testing mine and my counterparts varius commands"
+      else
       msg.send "idk where you are"
  
