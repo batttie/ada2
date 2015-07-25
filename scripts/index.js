@@ -4,8 +4,7 @@
 // Dependencies:
 //   underscore
 //   passport
-//   passport-google-oauth
-//   express
+//   passport-google-oauth  
 //   node-uuid
 //   googleapis
 //
