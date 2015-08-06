@@ -7,4 +7,6 @@ module.exports = (robot) ->
     robot.http("http://ingress.wikia.com/api/v1/Articles/AsSimpleJson?id=2072")
          .get() (err, msg, body) ->
            data = JSON.parse(body)
-           res.send "#{require('util').inspect(data.sections[0])}"
+           wa = #{require('util').inspect(data.sections[0])}
+           res.send wa
+           
