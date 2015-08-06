@@ -5,7 +5,7 @@
 module.exports = (robot) ->
   robot.hear /wiki (\w)/i, (res) ->
     query = res.match[1]
-      if query = "ada"
+    if query = "ada"
         id = 2072
     robot.http("http://ingress.wikia.com/api/v1/Articles/AsSimpleJson?id=#{id}")
          .get() (err, msg, body) ->
