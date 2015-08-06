@@ -3,8 +3,11 @@
 #
 #
 module.exports = (robot) ->
-  robot.hear /wiki/i, (res) ->
-    robot.http("http://ingress.wikia.com/api/v1/Articles/AsSimpleJson?id=2072")
+  robot.hear /wiki (\w)/i, (res) ->
+    query = res.match[1]
+      if query = "ada"
+        id = 2072
+    robot.http("http://ingress.wikia.com/api/v1/Articles/AsSimpleJson?id=#{id}")
          .get() (err, msg, body) ->
            data = JSON.parse(body)
            title = data.sections[0].title
