@@ -8,5 +8,5 @@ module.exports = (robot) ->
          .get() (err, msg, body) ->
            data = JSON.parse(body)
            wa = #{require('util').inspect(data.sections[0])}
-           res.send wa
+           res.send wa.title
            
