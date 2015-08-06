@@ -5,7 +5,7 @@
 module.exports = (robot) ->
   robot.hear /wiki (.*)/i, (res) ->
     query = res.match[1]
-    if query is ada
+    if query is "ada"
        id = 2072
     if query is  "axa" 
        id = 2244
