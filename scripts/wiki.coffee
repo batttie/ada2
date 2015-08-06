@@ -9,7 +9,7 @@ module.exports = (robot) ->
        id = 2072
     if query is  "axa" 
        id = 3129
-        robot.http("http://ingress.wikia.com/api/v1/Articles/AsSimpleJson?id=#{id}")
+       robot.http("http://ingress.wikia.com/api/v1/Articles/AsSimpleJson?id=#{id}")
          .get() (err, msg, body) ->
            data = JSON.parse(body)
            title = data.sections[0].title
