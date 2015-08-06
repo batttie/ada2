@@ -7,6 +7,8 @@ module.exports = (robot) ->
     query = res.match[1]
     if query = "ada"
         id = 2072
+    else
+      res.send "i do not know that term, try again."
     robot.http("http://ingress.wikia.com/api/v1/Articles/AsSimpleJson?id=#{id}")
          .get() (err, msg, body) ->
            data = JSON.parse(body)
