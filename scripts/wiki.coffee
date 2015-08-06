@@ -9,5 +9,5 @@ module.exports = (robot) ->
            data = JSON.parse(body)
            title = "#{require('util').inspect(data.sections[0].title)}"
            lvl = "#{require('util').inspect(data.sections[0].level)}"
-           res.send title lvl
+           res.send title+lvl
            
