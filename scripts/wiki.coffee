@@ -9,6 +9,6 @@ module.exports = (robot) ->
            data = JSON.parse(body)
            title = data.sections[0].title
            lvl = data.sections[0].level
-           content = data.sections[0].content
+           content = data.sections[0].content[0].text
            res.send title+lvl+content
            
