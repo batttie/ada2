@@ -3,7 +3,7 @@
 #
 #
 module.exports = (robot) ->
-  robot.hear /wiki (\w)/i, (res) ->
+  robot.hear /wiki (.*)/i, (res) ->
     query = res.match[1]
     if query = "ada"
         id = 2072
