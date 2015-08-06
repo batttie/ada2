@@ -5,7 +5,7 @@
 module.exports = (robot) ->
   robot.hear /wiki (.*)/i, (res) ->
     query = res.match[1]
-    if query = "ada"
+    if query is "ada"
         id = 2072
     else
       res.send "i do not know that term, try again."
