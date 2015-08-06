@@ -10,6 +10,6 @@ module.exports = (robot) ->
            title = "#{require('util').inspect(data.sections[0].title)}"
            lvl = "#{require('util').inspect(data.sections[0].level)}"
            content = "#{require('util').inspect(data.sections[0].content)}"
-           text = "#{require('util').inspect(content[0].text)}"
+           text = "#{require('util').inspect(data.sections[0].content.text)}"
            res.send title+lvl+text
            
