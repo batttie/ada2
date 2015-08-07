@@ -15,7 +15,10 @@ module.exports = (robot) ->
            title = data.sections[0].title
            lvl = data.sections[0].level
            content = data.sections[0].content[0].text
-           element = data.sections[0].element[0].text
-           res.send "#{title} #{lvl} #{content} #{element}"    
+           message = "Title": "#{titiel}"
+           "Level": "#{lvl}"
+           "Content": "{content}"
+           
+           res.send "#{message}"  
     else
       res.send "i do not know that term, try again."
