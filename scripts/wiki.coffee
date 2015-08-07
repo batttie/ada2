@@ -15,7 +15,7 @@ module.exports = (robot) ->
            title = data.sections[0].title
            lvl = data.sections[0].level
            content = data.sections[0].content[0].text
-           message = "Title": "#{titie}"
+           message = "Title": "#{title}"
            "Level": "#{lvl}"
            "Content": "{content}"
            
