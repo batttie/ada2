@@ -18,7 +18,8 @@ module.exports = (robot) ->
            message = "Title": "#{title}"
            "Level": "#{lvl}"
            "Content": "{content}"
+           mg = JSON.stringfy(messaage)
+           res.send "#{mg}"
            
-           res.send "#{message}"  
     else
       res.send "i do not know that term, try again."
