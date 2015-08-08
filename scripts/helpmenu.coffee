@@ -2,7 +2,7 @@ module.exports = (robot) ->
   robot.hear /helpmenu/i, (res) ->
     res.reply "here is a list of useful commands:
              /cycle all septicycle information
-             `/checkpoint` - `/checkpoint all` , `/checkpoint 8`
+  \n`/checkpoint` - `/checkpoint all` , `/checkpoint 8`
              next checkpoints
              `farm/CITYNAME ----local farm info
              `/away` - Toggle your 'away' status
