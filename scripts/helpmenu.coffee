@@ -1,6 +1,6 @@
 module.exports = (robot) ->
   robot.hear /helpmenu/i, (res) ->
-    reply.res "here is a list of useful commands:
+    res.reply "here is a list of useful commands:
              /cycle all septicycle information
              `/checkpoint` - `/checkpoint all` , `/checkpoint 8`
              next checkpoints
