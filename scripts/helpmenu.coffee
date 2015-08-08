@@ -1,9 +1,9 @@
 module.exports = (robot) ->
   robot.hear /helpmenu/i, (res) ->
     res.reply "here is a list of useful commands:
-\n/cycle all septicycle information 
-\n`/checkpoint` - `/checkpoint all` , `/checkpoint 8` - next checkpoints
-\n"farm/CITYNAME ----local farm info
+\n /cycle all septicycle information 
+\n `/checkpoint` - `/checkpoint all` , `/checkpoint 8` - next checkpoints
+\n 'farm/CITYNAME ----local farm info
              `/away` - Toggle your 'away' status
              `/close` ( or `/leave`, `/part`) - Close a channel, group, or DM
              `/collapse` - Collapse images/video `/expand` - Expand images/video
