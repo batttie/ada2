@@ -1,5 +1,4 @@
 module.exports = (robot) ->
-  user_id = @client.getUserByName(envelope.room).id
-  user = robot.brain.userForId(user_id)
+  user = user = @robot.brain.userForId msg.user
   robot.hear /pfft/i, (res) ->
-    res.message.user "pfft what"
+    res.msg.user "pfft what"
