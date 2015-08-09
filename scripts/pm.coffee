@@ -1,3 +1,3 @@
 module.exports = (robot) ->
-  robot.hear /psst/i, (res) ->
-    res.sendPrivate "psst what"
+  robot.hear /pfft/i, (res) ->
+    res.dm "pfft what"
