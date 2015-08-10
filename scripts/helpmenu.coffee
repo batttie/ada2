@@ -1,6 +1,8 @@
 module.exports = (robot) ->
   robot.hear /helpmenu/i, (res) ->
-    res.reply "here is a list of useful commands:
+    user = robot.brain.userForId msg.envelope.user.id
+    robot.logger.info "user: #{user}\nid: #{user.id}\nroom: #{msg.envelope.user.id}"
+    helpmsg = "here is a list of useful commands:
 \n `/cycle` or `/cycle all` septicycle information 
 \n `/checkpoint` , `/checkpoint all` , `/checkpoint {#}` - next checkpoints
 \n 'farm/{city name}` - local farm info
@@ -13,4 +15,6 @@ module.exports = (robot) ->
 \n`/prefs` - Open the preferences dialog
 \n `/remind me in <time> to <message> `
 \n `/rename [new name] `- Renames a channel or group
-\n /shortcuts (or /keys) - Open the keyboard shortcuts dialog"
+\n `/shortcuts` or `/keys` - Open the keyboard shortcuts dialog"
+
+    robot.send {room: msg.envelope.user.name}, helpmsg
