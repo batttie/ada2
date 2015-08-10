@@ -1,7 +1,7 @@
 module.exports = (robot) ->
   robot.hear /helpmenu/i, (res) ->
     user = robot.brain.userForId res.envelope.user.id
-    robot.logger.info "user: #{user}\nid: #{user.id}\nroom: #{msg.envelope.user.id}"
+    robot.logger.info "user: #{user}\nid: #{user.id}\nroom: #{res.envelope.user.id}"
     helpmsg = "here is a list of useful commands:
 \n `/cycle` or `/cycle all` septicycle information 
 \n `/checkpoint` , `/checkpoint all` , `/checkpoint {#}` - next checkpoints
