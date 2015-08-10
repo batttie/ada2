@@ -17,4 +17,4 @@ module.exports = (robot) ->
 \n `/rename [new name] `- Renames a channel or group
 \n `/shortcuts` or `/keys` - Open the keyboard shortcuts dialog"
 
-    robot.send {room: msg.envelope.user.name}, helpmsg
+    robot.send {room: res.envelope.user.name}, helpmsg
