@@ -5,4 +5,9 @@ set -e
 npm install
 export PATH="node_modules/.bin:node_modules/hubot/node_modules/.bin:$PATH"
 
-exec node_modules/.bin/hubot --name "ada" "$@"
+#Slack 
+export Hubot_SLACK_TOKEN="xoxb-6748688806-higl4YBmFMMjf5Tr8xKBhX5W"
+export Hubot_SLACK_TEAM="https://enl-monterey.slack.com"
+
+exec node_modules/.bin/hubot --name ada "$@"
+
