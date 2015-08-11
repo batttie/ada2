@@ -2,10 +2,8 @@
 #
 #
 module.exports = (robot) ->
-    get_channel = (response) ->
-      if response.message.room == response.message.user.name
-        "@#{response.message.room}"
-      else
-        "##{response.message.room}"
-    msg.send get_channel
-  
+ get_channel = (response) ->
+    f response.message.room == response.message.user.name
+     "@#{response.message.room}"
+   else
+    "##{response.message.room}"
