@@ -1,3 +1,3 @@
 module.exports = (robot) ->
-  robot.respond /hello$/i, (msg) ->
+  robot.enter (res) ->
     robot.messageRoom '#testing', 'hello there'
