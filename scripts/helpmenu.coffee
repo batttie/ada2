@@ -3,9 +3,7 @@ module.exports = (robot) ->
     user = robot.brain.userForId res.envelope.user.id
     robot.logger.info "user: #{user}\nid: #{user.id}\nroom: #{res.envelope.user.id}"
     helpmsg = "here is a list of useful commands:
-\n `/cycle` or `/cycle all` septicycle information 
-\n `/checkpoint` , `/checkpoint all` , `/checkpoint {#}` - next checkpoints
-\n 'farm/{city name}` - local farm info
+\n *Slack Commands*
 \n `/away` - Toggle your 'away' status
 \n`/close` , `/leave`, `/part` - Close a channel, group, or DM
 \n `/collapse` - Collapse images/video `/expand` - Expand images/video
@@ -15,6 +13,12 @@ module.exports = (robot) ->
 \n`/prefs` - Open the preferences dialog
 \n `/remind me in <time> to <message> `
 \n `/rename [new name] `- Renames a channel or group
-\n `/shortcuts` or `/keys` - Open the keyboard shortcuts dialog"
+\n `/shortcuts` or `/keys` - Open the keyboard shortcuts dialog
+\n *Ingress Related Commands*
+\n `/cycle` or `/cycle all` septicycle information 
+\n `/checkpoint` , `/checkpoint all` , `/checkpoint {#}` - next checkpoints
+\n `farm/{city name}` - local farm info
+\n `/code {PASSCODE}` - Sends a passcode to other teams.  Check out #codes
+\n `/portal {search} {Portal Title}` - Seacrches for specific portal information.  Try `/portal help` for more info"
 
     robot.send {room: res.envelope.user.name}, helpmsg
