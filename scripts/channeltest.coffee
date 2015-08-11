@@ -3,7 +3,10 @@
 #
 module.exports = (robot) ->
   robot.hear /room/i,(msg) ->
-    channel = @client.getChannelGroupOrDMByID msg.envenlope.channel.id
-    room = channel.name
-    msg.reply room
+    get_channel = (response) ->
+      if response.message.room == response.message.user.name
+        "@#{response.message.room}"
+      else
+        "##{response.message.room}
+    msg.send get_channel
   
