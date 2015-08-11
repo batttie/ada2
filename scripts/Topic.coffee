@@ -1,4 +1,4 @@
 moldule.exports = robot ->
- robot.hear /topic/i, (res) ->
- topic = @client.getChannelGroupOrDMByName res.envelope.room
- robot.send #{topic}
+ robot.hear / (\ topic | ^ topic) $ / i, (msg) ->
+    room = msg.envelope.room
+    msg.send robot.adapter.bot.chans[room].topic
