@@ -9,3 +9,6 @@ module.exports = (robot) ->
     else
     "##{response.message.room}"
     res.send 'get_channel'
+    
+   robot.catchAll (response) ->
+     console.log('catch all: ', response)
