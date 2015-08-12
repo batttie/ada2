@@ -8,7 +8,7 @@ module.exports = (robot) ->
      "@#{response.message.room}"
     else
      "##{response.message.room}"
-  res.send 'get_channel'
+    res.send 'get_channel'
     
   robot.catchAll (response) ->
     console.log('catch all: ', response)
