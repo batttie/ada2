@@ -3,12 +3,12 @@
 #
 module.exports = (robot) ->
   robot.hear /room/i, (res) ->
-  get_channel = (response) ->
+   get_channel = (response) ->
     if response.message.room == response.message.user.name
      "@#{response.message.room}"
-    else
+   else
     "##{response.message.room}"
-    res.send 'get_channel'
+  res.send 'get_channel'
     
-    robot.catchAll (response) ->
-     console.log('catch all: ', response)
+robot.catchAll (response) ->
+  console.log('catch all: ', response)
