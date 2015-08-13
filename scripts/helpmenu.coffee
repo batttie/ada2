@@ -9,7 +9,9 @@ module.exports = (robot) ->
 \n `/collapse` - Collapse images/video `/expand` - Expand images/video
 \n`/feed help` [or subscribe, list, remove] | /feedback - send feedback to Slack | 
 \n `/invite @user [channel]`
-\n`/me {your message}` - displays action text `/msg` (or `/dmg`) @ user [your message] `/open` (or `/join`) [channel] 
+\n`/me {your message}` - displays action text 
+\n`/msg` or `/dmg` @ user [your message] private message a user
+\n`/open` or `/join` [channel] - Join a channel
 \n`/prefs` - Open the preferences dialog
 \n `/remind me in <time> to <message> `
 \n `/rename [new name] `- Renames a channel or group
