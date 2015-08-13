@@ -21,6 +21,6 @@ module.exports = (robot) ->
 \n `/checkpoint` , `/checkpoint all` , `/checkpoint {#}` - next checkpoints
 \n `farm/{city name}` - local farm info
 \n `/code {PASSCODE}` - Sends a passcode to other teams.  Check out #codes
-\n `/portal {search} {Portal Title}` - Seacrches for specific portal information.  Try `/portal help` for more info"
-
+\n `/portal {search} {Portal Title}` - Seacrches for specific portal information.  Try `/portal help` for more info
+\n "/whatis {text}' defines a term"
     robot.send {room: res.envelope.user.name}, helpmsg
