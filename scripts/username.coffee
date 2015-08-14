@@ -1,5 +1,5 @@
 module.exports = (robot) ->
   robot.hear /name (.*)/i, (res) ->
-  name = msg.match[1]
-  res.send "#{name}"
+  name = res.match[1]
+    res.send "#{name}"
   
