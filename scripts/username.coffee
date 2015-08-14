@@ -1,7 +1,7 @@
 module.exports = (robot) ->
   robot.hear /name (.*)/i, (msg) ->
   # Replace @username with <@UXXXXX> for mentioning users
-    msg = msg.replace /(?:^@| @)([A-z]+)/gm, (match, p1) =>
+    msg.replace /(?:^@| @)([A-z]+)/gm, (match, p1) =>
     try
       user_id = @client.getUserByName(p1).id
       match = ' <@' + user_id + '>'
