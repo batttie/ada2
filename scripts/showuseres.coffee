@@ -6,3 +6,4 @@ module.exports = (robot) ->
       response += "#{user.id} #{user.name}"
       response += " <#{user.email_address}>" if user.email_address
       response += "\n"
+    msg.send response
