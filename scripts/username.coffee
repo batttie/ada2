@@ -1,5 +1,6 @@
 module.exports = (robot) ->
   robot.hear /name (.*)/i, (res) ->
      name = res.match[1]
-     res.send message.text
+     message = "hi"
+     robot.send {room: message.envelope.user.name}, message
   
