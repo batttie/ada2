@@ -8,6 +8,6 @@ module.exports = (robot) ->
     catch
       match = match
 
-     name = res.match[1]
+     #name = res.match[1]
      message = "hi"
      robot.send {room: message.envelope.user.name}, message
