@@ -15,9 +15,9 @@
 #   batttie
 tellmessage = "Welcome to the Slack Chat of the Monterey Bay & Surrounding areas"
 module.exports = (robot) ->
-  robot.respond /greetingss ([\w.-]*):? (.*)/i, (msg) ->
+  robot.respond /greetingss (.*)/i, (msg) ->
     username = msg.match[1]
-    user = robot.brain.userForId msg.envelope.user.id
+    user = robot.brain.userForId username
     robot.logger.info "user: #{user}\nid: #{user.id}\nroom: #{msg.envelope.user.id}"
-    robot.send {room: msg.envelope.user.name}, "#{tellmessage}"
+    robot.send {room: username}, "#{tellmessage}"
     
