@@ -1,4 +1,4 @@
 module.exports = (robot) ->
-  robot.respond /show (.*)/i, (res) ->
+  robot.hear /show (.*)/i, (res) ->
     tes = res.match[1]
-    res.send "tes"
+    res.send "#{tes}"
