@@ -19,5 +19,5 @@ module.exports = (robot) ->
     username = msg.match[1]
     user = robot.brain.userForId username
     robot.logger.info "user: #{user}\nid: #{user.id}\nroom: #{msg.envelope.user.id}"
-    robot.send {room: username}, "#{tellmessage}"
+    robot.send {room: user}, "#{tellmessage}"
     
