@@ -1,4 +1,4 @@
 module.exports = (robot) ->
   robot.hear /rm/i, (res) ->
-    res.send "<#CG053KKSK0>
+    res.send "<#CG053KKSK0>"
 
