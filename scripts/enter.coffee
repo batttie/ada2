@@ -3,7 +3,7 @@ module.exports = (robot) ->
     room = msg.message.room
     user = robot.brain.userForId msg.envelope.user.id
     robot.logger.info "user: #{user}\nid: #{user.id}\nroom: #{msg.envelope.user.id}"
-    msg.send "<!everyone> welcome <@#{user}> to #{room}"
+    msg.send "<!channel> welcome @#{user} to #{room}"
     if room == "testing"
      robot.send {room: msg.envelope.user.name}, "OMFG #{room}"
     if room == "tresses"
