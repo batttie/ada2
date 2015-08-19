@@ -6,5 +6,5 @@ module.exports = (robot) ->
     robot.send {room: msg.envelope.user.name}, "Greetings! #{room}"
     if room == "testing"
      robot.send {room: msg.envelope.user.name}, "OMFG #{room}"
-    if room == tresses
+    if room == "tresses"
      robot.send {room: msg.envelope.user.name}, "OHSHIT #{room}"
