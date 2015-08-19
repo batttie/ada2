@@ -1,5 +1,5 @@
 module.exports = (robot) ->
   robot.hear /rm/i, (msg) ->
-    room = msg.message[3].channel
+    room = msg.message
     res.send "room"
 
