@@ -1,4 +1,5 @@
 module.exports = (robot) ->
   robot.hear /rm/i, (res) ->
-    res.send "<#CG053KKSK0>"
+    room = room = msg.message.rawmessage.channel
+    res.send "room"
 
