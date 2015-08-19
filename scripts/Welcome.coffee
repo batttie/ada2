@@ -16,8 +16,9 @@
 tellmessage = "Welcome to the Slack Chat of the Monterey Bay & Surrounding areas"
 module.exports = (robot) ->
   robot.hear /new user (.*)/i, (msg) ->
-    username = msg.match[1]
-    user = robot.brain.userForId username
+    mentionname = msg.match[1]
+    user = robot.brain.userForId(msg.envelope.user.id)
+    user.mentionname = mentionname
     robot.logger.info "user: #{user}\nid: #{user.id}\nroom: #{msg.envelope.user.id}"
-    robot.send {room: user}, "#{tellmessage}"
+    robot.send {room: mentionname}, "#{tellmessage}"
     
