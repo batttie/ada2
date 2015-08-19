@@ -5,6 +5,6 @@ module.exports = (robot) ->
     robot.logger.info "user: #{user}\nid: #{user.id}\nroom: #{msg.envelope.user.id}"
     robot.send {room: msg.envelope.user.name}, "Greetings! #{room}"
       if room == "testing"
-        robot.send {room: msg.envelope.user.name}, "OMFG #{room}"
+      robot.send {room: msg.envelope.user.name}, "OMFG #{room}"
       if room == tresses
-        robot.send {room: msg.envelope.user.name}, "OHSHIT #{room}"
+      robot.send {room: msg.envelope.user.name}, "OHSHIT #{room}"
