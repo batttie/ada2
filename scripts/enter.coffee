@@ -11,4 +11,4 @@ module.exports = (robot) ->
     if room == "_general_"
      robot.send {room: msg.envelope.user.name}, "Welcome to ##{room}.\n  This is the general chat room of mbenl.  You will see ALOT of conversation here.  I suggest for this channel you set your notifications so that only mentions of your name will alert you.  To see a list of commands type `helpmenu`  For more type helpme"
     if room == "secure-local-agents"
-      robot.send {room: msg.envelope.user.name}, "Welcome to #{room}."
+      robot.send {room: msg.envelope.user.name}, "Welcome to #{room}.  You have met the requirments to be invited to this secure group of people.  Please *DO NOT RE-SHARE* the information you gain here to those who are not apart of this group."
