@@ -5,7 +5,8 @@ module.exports = (robot) ->
     .get() (err, msg, body) ->
      data = JSON.parse body
      num = data.total
-     while num -= 0
+     while num >= 0
+       num = num - 1
        res.send "#{data.items[num].id}"
 #    if query is "ada"
 #        id = 2072
