@@ -4,4 +4,4 @@ module.exports = (robot) ->
     lyrics = while num -= 1
       "#{num} little monkeys, jumping on the bed.
     One fell out and bumped his head."
-      res.send lyrics
+      res.send "#{lyrics}"
