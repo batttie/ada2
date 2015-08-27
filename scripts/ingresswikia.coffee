@@ -5,8 +5,8 @@ module.exports = (robot) ->
     .get() (err, msg, body) ->
      data = JSON.parse body
      num = data.total
-     reps = while num -= 0
-       res.send "data.items[#{num}]"
+     while num -= 1
+       res.send "#{data.items[#{num}]}"
 #    if query is "ada"
 #        id = 2072
 #        robot.http("http://ingress.wikia.com/api/v1/Articles/AsSimpleJson?id=#{id}")
