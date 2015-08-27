@@ -5,7 +5,7 @@ module.exports = (robot) ->
       .get() (err, msg, body) ->
         data = JSON.parse(body)
         string = JSON.stringfy body
-      res.send data
+        res.send data, query
 #    if query is "ada"
 #        id = 2072
 #        robot.http("http://ingress.wikia.com/api/v1/Articles/AsSimpleJson?id=#{id}")
