@@ -9,6 +9,6 @@ module.exports = (robot) ->
     if room == "tresses"
      robot.send {room: msg.envelope.user.name}, "Welcome to #{room}.\n *GTFO*"
     if room == "_general_"
-     robot.send {room: msg.envelope.user.name}, "Welcome to ##{room}.\nThis is the general chat room of mbenl.  You will see ALOT of conversation here.  I suggest for this channel you set your notifications so that only mentions of your name will alert you.  To see a list of slack commands type `helpmenu`  To see what tricks I can do, direct message (dm) `help` or #{robot.name}help\nFeel free and join <#C02U2U6SX> as passcodes are sent to that channel time to time from other enlightened slack teams"
+     robot.send {room: msg.envelope.user.name}, "Welcome to ##{room}.\nThis is the general chat room of mbenl.  You will see ALOT of conversation here.  I suggest for this channel you set your notifications so that only mentions of your name will alert you.  To see a list of slack commands type `helpmenu`  To see what tricks I can do, direct message (dm) `help` or #{robot.name}help\nFeel free and join <#C02U2U6SX> as passcodes are sent to that channel time to time from other enlightened slack teams\n*IT IS ADVISED NOT TO SHARE SENSITIVE INFO IN THIS CHANNEL i.e. Guardian Portal info."
     if room == "secure-local-agents"
       robot.send {room: msg.envelope.user.name}, "Welcome to #{room}.  You have met the requirments to be invited to this secure group of people.  Please *DO NOT RE-SHARE* the information you gain here to those who are not apart of this group."
