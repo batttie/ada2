@@ -26,6 +26,7 @@ module.exports = (robot) ->
              cnum = cnum + 1
              content = htitle.content[clnt].text
              res.send "#{content}"
+            res.send "done"
           res.send "done"
 #    if query is "ada"
 #        id = 2072
