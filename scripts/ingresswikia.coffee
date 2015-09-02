@@ -24,7 +24,7 @@ module.exports = (robot) ->
            cnum = -1
            while clnt >= cnum
              cnum = cnum + 1
-             content = htitle.content[clnt].text
+             content = data.sections[xnum].content[clnt].text
              res.send "#{content}"
             res.send "done"
           res.send "done"
