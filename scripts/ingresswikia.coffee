@@ -8,6 +8,7 @@ module.exports = (robot) ->
      while num >= 0
        num = num - 1
        res.send "#{data.items[num].title}\n#{data.items[num].id}"
+      res.send "done"
     robot.hear /wiki show (.*)/i, (res) ->
       id = res.match[1]
       robot.http("http://ingress.wikia.com/api/v1/Articles/AsSimpleJson?id=#{id}")
@@ -19,6 +20,7 @@ module.exports = (robot) ->
            title = data.sections[lnt].title
            content = data.sections[lnt].content[0].text
            res.send "#{lnt}\n#{body}\n*#{title}*\n#{content}"
+          res.send "done"
 #    if query is "ada"
 #        id = 2072
 #        robot.http("http://ingress.wikia.com/api/v1/Articles/AsSimpleJson?id=#{id}")
