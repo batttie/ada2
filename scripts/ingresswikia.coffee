@@ -18,8 +18,9 @@ module.exports = (robot) ->
          xnum = -1
          while lnt >= xnum
            xnum = xnum + 1
-           htitle = data.sections[xnum].title
-           clnt = data.sections[xnum].content.lenght
+           datan = data.sections[xnum]
+           htitle = datan.title
+           clnt = datan.content.lenght
            res.send "*#{htitle}*"
            cnum = -1
            while clnt >= cnum
