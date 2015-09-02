@@ -18,9 +18,14 @@ module.exports = (robot) ->
          xnum = -1
          while lnt >= xnum
            xnum = xnum + 1
-           title = data.sections[xnum].title
-           content = data.sections[xnum].content[0].text
-           res.send "#{lnt}\n#{body}\n*#{title}*\n#{content}"
+           htitle = data.sections[xnum].title
+           res.send "*#{htitle}*"
+           clnt = htitle.content.lenght
+           cnum = -1
+           while clnt >= cnum
+             cnum = cnum + 1
+             content = htitle.content[clnt].text
+             res.send "#{content}"
           res.send "done"
 #    if query is "ada"
 #        id = 2072
