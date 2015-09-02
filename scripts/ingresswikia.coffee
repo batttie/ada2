@@ -14,8 +14,8 @@ module.exports = (robot) ->
         .get() (err, msg, body) ->
          data = JSON.parse body
          lnt = data.sections.length
-         i == -1
-         while i < lnt 
+         i = -1
+         while i <= lnt 
            i = i++
            title = data.sections[i].title
            content = data.sections[i].content[0].text
