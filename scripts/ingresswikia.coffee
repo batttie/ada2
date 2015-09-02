@@ -13,16 +13,18 @@ module.exports = (robot) ->
       robot.http("http://ingress.wikia.com/api/v1/Articles/AsSimpleJson?id=#{id}")
         .get() (err, msg, body) ->
          data = JSON.parse body
-         lnt = Object.keys(data.sections).length
-         res.send "#{lnt}\n#{body}"
+         lnt = data.sections.length
+         title = data.sections[0].title
+         content = data.sections[0].content[0].text
+         res.send "#{lnt}\n#{body}\n#{title}\n#{content}"
 #    if query is "ada"
 #        id = 2072
 #        robot.http("http://ingress.wikia.com/api/v1/Articles/AsSimpleJson?id=#{id}")
 #         .get() (err, msg, body) ->
 #           data = JSON.parse(body)
-#           title = data.sections[0].title
+#           
 #           lvl = data.sections[0].level
-#           content = data.sections[0].content[0].text
+#           
 #           res.send "#{title} #{lvl} #{content}"
 #           res.send data.sections[0].title, data.sections[0].content[0].text
 #    else
