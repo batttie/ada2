@@ -14,9 +14,11 @@ module.exports = (robot) ->
         .get() (err, msg, body) ->
          data = JSON.parse body
          lnt = data.sections.length
-         title = data.sections[0].title
-         content = data.sections[0].content[0].text
-         res.send "#{lnt}\n#{body}\n#{title}\n#{content}"
+         i == -1
+           if i < lnt i++
+           title = data.sections[i].title
+           content = data.sections[i].content[0].text
+           res.send "#{lnt}\n#{body}\n*#{title}*\n#{content}"
 #    if query is "ada"
 #        id = 2072
 #        robot.http("http://ingress.wikia.com/api/v1/Articles/AsSimpleJson?id=#{id}")
