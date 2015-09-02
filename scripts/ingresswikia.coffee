@@ -15,10 +15,11 @@ module.exports = (robot) ->
         .get() (err, msg, body) ->
          data = JSON.parse body
          lnt = data.sections.length
-         while lnt >= 0
-           lnt = lnt - 1
-           title = data.sections[lnt].title
-           content = data.sections[lnt].content[0].text
+         xnum = -1
+         while lnt >= xnum
+           xnum = xnum + 1
+           title = data.sections[xnum].title
+           content = data.sections[xnum].content[0].text
            res.send "#{lnt}\n#{body}\n*#{title}*\n#{content}"
           res.send "done"
 #    if query is "ada"
