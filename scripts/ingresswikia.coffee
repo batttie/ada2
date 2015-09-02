@@ -16,8 +16,8 @@ module.exports = (robot) ->
          lnt = data.sections.length
          while lnt >= 0
            lnt = lnt -1
-           title = data.sections[i].title
-           content = data.sections[i].content[0].text
+           title = data.sections[lnt].title
+           content = data.sections[lnt].content[0].text
            res.send "#{lnt}\n#{body}\n*#{title}*\n#{content}"
 #    if query is "ada"
 #        id = 2072
