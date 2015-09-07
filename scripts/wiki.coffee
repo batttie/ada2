@@ -23,7 +23,7 @@ module.exports = (robot) ->
            clnt = datan.content.length
            res.send "*#{htitle}*"
            cnum = -1
-           For clnt >= cnum
+           For clnt >= cnum do
            cnum = cnum + 1
            content = data.sections[xnum].content[cnum].text                                             
            res.send "#{content}"
