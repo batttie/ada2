@@ -11,7 +11,6 @@ sendtitle = ->
   htitle = datan.title
   clnt = datan.content.length
   res.send "*#{htitle}*"
-  sendcontent
 
 module.exports = (robot) ->
   robot.hear /wiki show (.*)/i, (res) ->
