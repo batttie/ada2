@@ -1,6 +1,7 @@
 module.exports = (robot) ->
   robot.hear /wiki show (.*)/i, (res) ->
     id = res.match[1]
+    res.send "obtaining article, please wait"
     robot.http("http://ingress.wikia.com/api/v1/Articles/AsSimpleJson?id=#{id}")
       .get() (err, msg, body) ->
        data = JSON.parse body
