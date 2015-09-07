@@ -12,8 +12,8 @@ module.exports = (robot) ->
         datan = data.sections[xnum]
         htitle = datan.title
         clnt = datan.content.lenght
-        res.send "*#{htitle}*"
-        while clnt >= clnt
+        while clnt >= cnum
+         res.send "*#{htitle}*"
          cnum = cnum + 1
          hcontent = datan.content[cnum].text
          res.send "#{hcontent}"
