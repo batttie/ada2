@@ -1,3 +1,18 @@
+sendcontent = ->
+  While clnt >= cnum
+  cnum = cnum + 1
+  content = data.sections[xnum].content[cnum].text                                             
+  res.send "#{content}"
+
+sendtitle = ->
+  While lnt >= xnum
+  xnum = xnum + 1
+  datan = data.sections[xnum]
+  htitle = datan.title
+  clnt = datan.content.length
+  res.send "*#{htitle}*"
+  sendcontent
+
 module.exports = (robot) ->
   robot.hear /wiki search (.*)/i, (res) ->
     query = res.match[1]
@@ -16,17 +31,8 @@ module.exports = (robot) ->
          data = JSON.parse body
          lnt = data.sections.length
          xnum = -1
-         While lnt >= xnum
-           xnum = xnum + 1
-           datan = data.sections[xnum]
-           htitle = datan.title
-           clnt = datan.content.length
-           res.send "*#{htitle}*"
-           cnum = -1
-           While clnt >= cnum
-             cnum = cnum + 1
-             content = data.sections[xnum].content[cnum].text                                             
-             res.send "#{content}"
-             break if clnt = cnum
-           res.send "done #{xnum} #{cnum} #{clnt}"
+         sendtitle
+         sendcontent
+         cnum = -1
+         res.send "done #{xnum} #{cnum} #{clnt}"
          res.send "done"
