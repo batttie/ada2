@@ -4,7 +4,7 @@ module.exports = (robot) ->
     robot.http("http://ingress.wikia.com/api/v1/Articles/AsSimpleJson?id=#{id}")
       .get() (err, msg, body) ->
        data = JSON.parse body
-       lnt = data.sections.length
+       lnt = data.sections.length - 1
        xnum = -1
        while lnt >= xnum
         cnum = -1
