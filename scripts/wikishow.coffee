@@ -16,5 +16,5 @@ module.exports = (robot) ->
        xnum = -1
        sendtitle
        cnum = -1
-       res.send "done #{xnum} #{cnum} #{clnt}"
+       res.send "done #{xnum} #{cnum}"
        res.send "done"
