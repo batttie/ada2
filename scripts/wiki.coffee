@@ -16,16 +16,17 @@ module.exports = (robot) ->
          data = JSON.parse body
          lnt = data.sections.length
          xnum = -1
-         For lnt >= xnum do
+         While lnt >= xnum
            xnum = xnum + 1
            datan = data.sections[xnum]
            htitle = datan.title
            clnt = datan.content.length
            res.send "*#{htitle}*"
            cnum = -1
-           For clnt >= cnum do
-           cnum = cnum + 1
-           content = data.sections[xnum].content[cnum].text                                             
-           res.send "#{content}"
+           While clnt >= cnum
+             cnum = cnum + 1
+             content = data.sections[xnum].content[cnum].text                                             
+             res.send "#{content}"
+             break if clnt = cnum
            res.send "done #{xnum} #{cnum} #{clnt}"
          res.send "done"
