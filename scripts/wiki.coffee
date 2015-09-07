@@ -9,15 +9,3 @@ module.exports = (robot) ->
        num = num - 1
        res.send "#{data.items[num].title}\n#{data.items[num].id}"
       res.send "done"
-    robot.hear /wiki show (.*)/i, (res) ->
-      id = res.match[1]
-      robot.http("http://ingress.wikia.com/api/v1/Articles/AsSimpleJson?id=#{id}")
-        .get() (err, msg, body) ->
-         data = JSON.parse body
-         lnt = data.sections.length
-         xnum = -1
-         sendtitle
-         sendcontent
-         cnum = -1
-         res.send "done #{xnum} #{cnum} #{clnt}"
-         res.send "done"
