@@ -8,7 +8,7 @@ module.exports = (robot) ->
      items = data.total
      num = -1
      res.send "I have found #{items} items for your search"
-     while items > num
+     while items - 1 > num
        num = num + 1
        message =data.items[num].title + "\n" + data.items[num].id + "\n"
      res.send "#{message}"
