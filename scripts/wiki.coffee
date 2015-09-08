@@ -12,4 +12,6 @@ module.exports = (robot) ->
      while items - 1 > num
        num = num + 1
        res.send "#{data.items[num].title}" + "\n" + "#{data.items[num].id}" + "\n"
-       
+       message = []
+       message.push "#{data.items[num].title}" + "\n" + "#{data.items[num].id}" + "\n"
+     res. send "message"
