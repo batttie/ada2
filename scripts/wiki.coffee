@@ -10,5 +10,5 @@ module.exports = (robot) ->
      res.send "I have found #{items} items for your search"
      while items > num
        num = num + 1
-       message = + data.items[num].title + "\n" + data.items[num].id + "\n"
+       message =data.items[num].title + "\n" + data.items[num].id + "\n"
      res.send "#{message}"
