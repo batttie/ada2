@@ -6,8 +6,10 @@ module.exports = (robot) ->
     .get() (err, msg, body) ->
      data = JSON.parse body
      num = data.total
-     while num >= 0
+     replimit = num
+     rep = 0
+     while replimit > rep
        num = num - 1
+       rep = rep + 1
        message = + "#{data.items[num].title}\n#{data.items[num].id}\n"
-       break if undefined
       res.send "message"
