@@ -12,7 +12,7 @@ module.exports = (robot) ->
      messagetotal = ""
      while items - 1 > num
        num = num + 1
-       res.send "#{data.items[num].title}" + "\n" + "#{data.items[num].id}" + "\n"
+      # res.send "#{data.items[num].title}" + "\n" + "#{data.items[num].id}" + "\n"
        message = "#{data.items[num].title}" + "\n" + "#{data.items[num].id}" + "\n"
        
        messagetotal = messagetotal + message
