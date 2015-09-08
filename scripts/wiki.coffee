@@ -12,3 +12,4 @@ module.exports = (robot) ->
        num = num + 1
        message =data.items[num].title + "\n" + data.items[num].id + "\n"
      res.send "#{message}"
+    res.send "#{message}"
