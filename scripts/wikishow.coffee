@@ -7,7 +7,7 @@ module.exports = (robot) ->
        data = JSON.parse body
        lnt = data.sections.length - 1
        xnum = -1
-       mssagetotal = ""
+       messagetotal = ""
        while lnt > xnum
         cnum = -1
         xnum = xnum + 1
