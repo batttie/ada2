@@ -11,5 +11,5 @@ module.exports = (robot) ->
      while replimit > rep
        num = num - 1
        rep = rep + 1
-       message = + "#{data.items[num].title}\n#{data.items[num].id}\n"
+       message = + data.items[num].title\n + data.items[num].id \n
      res.send "#{message}"
