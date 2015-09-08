@@ -21,4 +21,4 @@ module.exports = (robot) ->
          hcontent = datan.content[cnum].text
          message = "#{hcontent}"
          messagetotal = messagetotal + message
-      res.send "#{messagetotal}"
+       res.send "#{messagetotal}"
