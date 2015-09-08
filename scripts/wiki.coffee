@@ -8,6 +8,7 @@ module.exports = (robot) ->
      num = data.total
      replimit = num
      rep = 0
+     res.send "I have found #{num} items for your search"
      while replimit >= rep
        num = num - 1
        rep = rep + 1
