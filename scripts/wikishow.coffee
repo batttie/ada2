@@ -14,11 +14,11 @@ module.exports = (robot) ->
         datan = data.sections[xnum]
         htitle = datan.title
         clnt = datan.content.length - 1
-        message = "*#{htitle} #{clnt}*"
+        message = "*#{htitle}*" + "\n"
         messagetotal = messagetotal + message
         while clnt > cnum
          cnum = cnum + 1
          hcontent = datan.content[cnum].text
-         message = "#{hcontent}"
+         message = "#{hcontent}" + "\n"
          messagetotal = messagetotal + message
        res.send "#{messagetotal}"
