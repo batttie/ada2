@@ -9,4 +9,5 @@ module.exports = (robot) ->
      while num >= 0
        num = num - 1
        message = + "#{data.items[num].title}\n#{data.items[num].id}\n"
+       break if data.ites[num].title = undefined
       res.send "message"
