@@ -7,14 +7,18 @@ module.exports = (robot) ->
        data = JSON.parse body
        lnt = data.sections.length - 1
        xnum = -1
-       while lnt >= xnum
+       mssagetotal = ""
+       while lnt > xnum
         cnum = -1
         xnum = xnum + 1
         datan = data.sections[xnum]
         htitle = datan.title
         clnt = datan.content.length - 1
-        res.send "*#{htitle} #{clnt}*"
+        message = "*#{htitle} #{clnt}*"
+        messagetotal = messagetotal + message
         while clnt > cnum
          cnum = cnum + 1
          hcontent = datan.content[cnum].text
-         res.send "#{hcontent}"
+         message = "#{hcontent}"
+         messagetotal = messagetotal + message
+      res.send "#{messagetotal}"
