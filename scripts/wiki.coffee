@@ -8,7 +8,7 @@ module.exports = (robot) ->
      num = data.total
      replimit = num
      rep = 0
-     while replimit > rep
+     while replimit >= rep
        num = num - 1
        rep = rep + 1
        message = + data.items[num].title + "\n" + data.items[num].id + "\n"
