@@ -9,10 +9,11 @@ module.exports = (robot) ->
      items = data.total
      num = -1
      res.send "I have found #{items} items for your search"
+     messagetotal = ""
      while items - 1 > num
        num = num + 1
        res.send "#{data.items[num].title}" + "\n" + "#{data.items[num].id}" + "\n"
        message = "#{data.items[num].title}" + "\n" + "#{data.items[num].id}" + "\n"
+       
        messagetotal = messagetotal + message
-     res.send "#{message}"
      res.send "#{messagetotal}"
