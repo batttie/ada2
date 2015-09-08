@@ -14,4 +14,5 @@ module.exports = (robot) ->
        res.send "#{data.items[num].title}" + "\n" + "#{data.items[num].id}" + "\n"
        message = "#{data.items[num].title}" + "\n" + "#{data.items[num].id}" + "\n"
        messagetotal = messagetotal + message
-     res. send "#{message}"
+     res.send "#{message}"
+     res.send "#{messagetotal}"
