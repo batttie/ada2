@@ -4,7 +4,8 @@ slacktoken = "xoxp-2886416911-2972267514-6905744660-12b73a"
 slackInviteUrl = "https://#{slackcomm}.slack.com/api/users.admin.invite"
 module.exports = (robot) ->
   robot.hear /send invite (.*)/i, (res) ->
-    email = res.match[1]
+    rawemail = res.match[1]
+    email = rawemail.replace(/m.*\|/gi, "")
     form =
       email: "#{email}"
       token: "#{slacktoken}"
