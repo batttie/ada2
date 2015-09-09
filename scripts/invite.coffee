@@ -12,4 +12,4 @@ module.exports = (robot) ->
       set_active: "true"
     robot.http(slackInviteUrl)
     .post(form) (err, msg, body) ->
-      res.send "#{err}, #{msg}, #{body}\n#{slacInviteUrl}\nslacktoken\nemail"
+      res.send "#{err}, #{msg}, #{body}\n#{slackInviteUrl}\n#{slacktoken}\n#{email}"
