@@ -1,7 +1,7 @@
 
 slackcomm = "enl-monterey"
 slacktoken = "xoxp-2886416911-2972267514-6905744660-12b73a"
-slackInviteUrl = "https://#{slackcomm}.slack.com/api/users.admin.invite"
+slackInviteUrl = "https://" + slackcomm + ".slack.com/api/users.admin.invite"
 module.exports = (robot) ->
   robot.hear /send invite (.*)/i, (res) ->
     rawemail = res.match[1]
@@ -13,4 +13,4 @@ module.exports = (robot) ->
     robot.http(slackInviteUrl)
     .post(form) (err, msg, body) ->
       msgs = JSON.stringify msg
-      res.send "#{err}, #{msg}, #{body}"
+      res.send "#{err}, #{msg}, #{body}\n#{slacInviteUrl}\nslacktoken\nemail"
