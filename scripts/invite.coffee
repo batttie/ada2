@@ -7,9 +7,9 @@ module.exports = (robot) ->
     rawemail = res.match[1]
     email = rawemail.replace(/m.*\|/gi, "")
     form =
-      email: "#{email}"
-      token: "#{slacktoken}"
-      set_active: "true"
+      email: email
+      token: slacktoken
+      set_active: true
     robot.http(slackInviteUrl)
     .post(form) (err, msg, body) ->
       form = JSON.stringify form
