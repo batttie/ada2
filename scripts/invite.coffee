@@ -12,4 +12,5 @@ module.exports = (robot) ->
       set_active: "true"
     robot.http(slackInviteUrl)
     .post(form) (err, msg, body) ->
+      msg = JSON.stringfy msg
       res.send "#{err}, #{msg}, #{body}"
