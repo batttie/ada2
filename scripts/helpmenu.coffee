@@ -19,8 +19,9 @@ module.exports = (robot) ->
 \n *Ingress Related Commands*
 \n `/cycle` or `/cycle all` septicycle information 
 \n `/checkpoint` , `/checkpoint all` , `/checkpoint {#}` - next checkpoints
-\n `farm/{city name}` - local farm info
+\n `/farm{city name}` - local farm info
 \n `/code {PASSCODE}` - Sends a passcode to other teams.  Check out #codes
-\n `/portal {search} {Portal Title}` - Seacrches for specific portal information.  Try `/portal help` for more info
-\n `/whatis {text}' defines a term"
+\n `/portal {search} {Portal Title}` - Seacrches for specific portal information.  Try `/portal help` for more info"
+
+    res.reply "I am sending you a dm now!"
     robot.send {room: res.envelope.user.name}, helpmsg
