@@ -1,22 +1,56 @@
-# Thanking user by giving +1
+# Description:
+#   Watch your language!
 #
-# <receiver>: +1 for <reason> - give +1 to <receiver> (full name) because he did <reason>
-# who thanks me - show how many people thank me and why
-# (show ranking|ranking) - show top players
+# Dependencies:
+#   None
+#
+# Configuration:
+#   None
+#
+# Commands:
+#
+# Author:
+#   whitman, jan0sch
 
 module.exports = (robot) ->
-  robot.brain.data.achievements ||= {}
 
-  robot.hear /(.*): *(\+1|thx) for (.*)$/i, (msg) ->
-    receiver = msg.match[1].trim()
-    thanking = msg.message.user.name
-    reason   = msg.match[3]
-
-    if receiver == thanking
-      msg.send "hey, don't cheat!"
-
-    unless reason?
-      msg.send "#{thanking}: you must give a reason"
+  words = [
+    'arsch',
+    'arschloch',
+    'arse',
+    'ass',
+    'bastard',
+    'bitch',
+    'bugger',
+    'bollocks',
+    'bullshit',
+    'cock',
+    'cunt',
+    'damn',
+    'damnit',
+    'depp',
+    'dick',
+    'douche',
+    'fag',
+    'fotze',
+    'fuck',
+    'fucked',
+    'fucking',
+    'kacke',
+    'piss',
+    'pisse',
+    'scheisse',
+    'schlampe',
+    'shit',
+    'wank',
+    'wichser'
+  ]
+  regex = new RegExp('(?:^|\\s)(' + words.join('|') + ')(?:\\s|\\.|\\?|!|$)', 'i');
+robot.brain.data.credit ||= {}
+  robot.hear regex, (msg) ->
+    perp = msg.message.user.name
+    reason = regex
+    msg.send 'You have been fined one credit for a violation of the verbal morality statute.\n Be well.'
 
     if receiver != thanking and reason?
       robot.brain.data.achievements[receiver] ||= []
@@ -24,7 +58,7 @@ module.exports = (robot) ->
       robot.brain.data.achievements[receiver].push event
       msg.send "#{event.given_by} say thanks to #{receiver} for #{event.reason}"
 
-  robot.respond /who thanks me??/i, (msg) ->
+  robot.respond /my violations??/i, (msg) ->
     user = msg.message.user.name
     response = "#{user}, #{robot.brain.data.achievements[user].length} time(s) someone thanked you:\n"
     for achievement in robot.brain.data.achievements[user]
@@ -34,8 +68,8 @@ module.exports = (robot) ->
   robot.respond /(|show )ranking/i, (msg) ->
     ranking = []
 
-    for person, achievements of robot.brain.data.achievements
-      ranking.push {name: person, points: achievements.length}
+    for person, achievements of robot.brain.data.credit
+      ranking.push {name: person, points: credit.length}
 
     sortedRanking = ranking.sort (a, b) ->
       b.points - a.points
