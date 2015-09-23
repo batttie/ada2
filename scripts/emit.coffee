@@ -11,4 +11,3 @@ module.exports = (robot) ->
           value: "Field value"
          }]
         channel: "#testing" # optional, defaults to message.room
-        username: "foobot" # optional, defaults to robot.name
