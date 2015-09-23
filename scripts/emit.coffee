@@ -1,5 +1,5 @@
 module.exports = (robot) ->
-  robit.hear /emit/i, (res)
+  robot.hear /emit/i, (res)
   robot.emit 'slack-attachment',
               channel: testing
               fallback: "I'm sorry dave attachment failed"
