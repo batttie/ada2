@@ -1,6 +1,6 @@
 module.exports = (robot) ->
   robot.hear /emit/i, (res) ->
-    robot.emit 'slack-attachment',
+  robot.emit 'slack-attachment',
               channel: "C03DQDDSK"
               pretext: "hello dave i am an attachment"
               content:
