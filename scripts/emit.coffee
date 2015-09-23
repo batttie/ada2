@@ -10,4 +10,3 @@ module.exports = (robot) ->
           title: "Field title"
           value: "Field value"
          }]
-        channel: "#testing" # optional, defaults to message.room
