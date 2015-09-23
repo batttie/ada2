@@ -1,4 +1,4 @@
-modules.export = (robot) ->
+module.exports = (robot) ->
   robit.hear /emit/i, (res)
   robot.emit 'slack-attachment',
               channel: testing
