@@ -52,16 +52,16 @@ module.exports = (robot) ->
     reason = regex
     msg.send 'You have been fined one credit for a violation of the verbal morality statute.\n Be well.'
 
-    robot.brain.data.achievements[perp] ||= []
+    robot.brain.data.credit[perp] ||= []
     event = {reason: reason, perpetrator: perp}
-    robot.brain.data.achievements[perp].push event
+    robot.brain.data.credit[perp].push event
     msg.send "#{event.perpetrator} has been fined for #{event.reason}"
 
   robot.respond /my violations??/i, (msg) ->
     user = msg.message.user.name
-    response = "#{user}, #{robot.brain.data.achievements[user].length} time(s) someone thanked you:\n"
-    for achievement in robot.brain.data.achievements[user]
-      response += "#{achievement.perpetrator} for #{achievement.reason}\n"
+    response = "#{user}, #{robot.brain.data.credit[user].length} time(s) someone thanked you:\n"
+    for achievement in robot.brain.data.credit[user]
+      response += "#{credit.perpetrator} for #{credit.reason}\n"
     msg.send response
 
   robot.respond /(|show )ranking/i, (msg) ->
