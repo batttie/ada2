@@ -49,7 +49,7 @@ module.exports = (robot) ->
   robot.brain.data.credit ||= {}
   robot.hear regex, (msg) ->
     perp = msg.message.user.name
-    reason = regex
+    reason = msg.match[regex]
     msg.send 'You have been fined one credit for a violation of the verbal morality statute.\n Be well.'
 
     robot.brain.data.credit[perp] ||= []
