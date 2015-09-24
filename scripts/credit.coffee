@@ -60,14 +60,14 @@ module.exports = (robot) ->
   robot.respond /my violations??/i, (msg) ->
     user = msg.message.user.name
     response = "#{user}, #{robot.brain.data.credit[user].length} time(s) someone thanked you:\n"
-    for achievement in robot.brain.data.credit[user]
+    for credit in robot.brain.data.credit[user]
       response += "#{credit.perpetrator} for #{credit.reason}\n"
     msg.send response
 
   robot.respond /(|show )ranking/i, (msg) ->
     ranking = []
 
-    for person, achievements of robot.brain.data.credit
+    for person, credits of robot.brain.data.credit
       ranking.push {name: person, points: credit.length}
 
     sortedRanking = ranking.sort (a, b) ->
