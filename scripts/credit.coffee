@@ -47,7 +47,7 @@ module.exports = (robot) ->
   ]
   regex = new RegExp('(?:^|\\s)(' + words.join('|') + ')(?:\\s|\\.|\\?|!|$)', 'i');
 robot.brain.data.credit ||= {}
-  robot.hear regex, (msg) ->
+robot.hear regex, (msg) ->
     perp = msg.message.user.name
     reason = regex
     msg.send 'You have been fined one credit for a violation of the verbal morality statute.\n Be well.'
