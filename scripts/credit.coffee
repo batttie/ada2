@@ -52,17 +52,16 @@ robot.brain.data.credit ||= {}
     reason = regex
     msg.send 'You have been fined one credit for a violation of the verbal morality statute.\n Be well.'
 
-    if receiver != thanking and reason?
-      robot.brain.data.achievements[receiver] ||= []
-      event = {reason: reason, given_by: thanking}
-      robot.brain.data.achievements[receiver].push event
-      msg.send "#{event.given_by} say thanks to #{receiver} for #{event.reason}"
+    robot.brain.data.achievements[perp] ||= []
+    event = {reason: reason, perpetrator: perp}
+    robot.brain.data.achievements[perp].push event
+    msg.send "#{event.perpetrator} has been fined for #{event.reason}"
 
   robot.respond /my violations??/i, (msg) ->
     user = msg.message.user.name
     response = "#{user}, #{robot.brain.data.achievements[user].length} time(s) someone thanked you:\n"
     for achievement in robot.brain.data.achievements[user]
-      response += "#{achievement.given_by} for #{achievement.reason}\n"
+      response += "#{achievement.perpetrator} for #{achievement.reason}\n"
     msg.send response
 
   robot.respond /(|show )ranking/i, (msg) ->
