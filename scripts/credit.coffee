@@ -67,7 +67,7 @@ module.exports = (robot) ->
   robot.respond /(|show )ranking/i, (msg) ->
     ranking = []
 
-    for person, credits of robot.brain.data.credit
+    for person, credit of robot.brain.data.credit
       ranking.push {name: person, points: credit.length}
 
     sortedRanking = ranking.sort (a, b) ->
