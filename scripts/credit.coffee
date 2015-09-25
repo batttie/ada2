@@ -59,9 +59,9 @@ module.exports = (robot) ->
 
   robot.respond /my violations??/i, (msg) ->
     user = msg.message.user.name
-    response = "#{user}, #{robot.brain.data.credit[user].length} time(s) someone thanked you:\n"
+    response = "#{user}, #{robot.brain.data.credit[user].length} time(s) you have broken the morality statue:\n"
     for credit in robot.brain.data.credit[user]
-      response += "#{credit.perpetrator} for #{credit.reason}\n"
+      response += "#{credit.perpetrator} for saying #{credit.reason}\n"
     msg.send response
 
   robot.respond /(|show )ranking/i, (msg) ->
@@ -73,12 +73,12 @@ module.exports = (robot) ->
     sortedRanking = ranking.sort (a, b) ->
       b.points - a.points
 
-    message = "Ranking\n"
+    message = "Naughty Agents \n"
 
     position = 0
     for user in sortedRanking
       position += 1
-      message += "#{position}. #{user.name} - #{user.points}\n"
+      message += "#{position}.---  Agent  #{user.name} --- Number of imprecation(s) #{user.points}\n"
 
     msg.send message
 
