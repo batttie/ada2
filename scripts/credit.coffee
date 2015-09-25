@@ -8,9 +8,9 @@
 #   None
 #
 # Commands:
-#
+#   @hubot my violations - will send your current violations
 # Author:
-#   whitman, jan0sch
+#   batttie
 
 module.exports = (robot) ->
 
@@ -82,7 +82,7 @@ module.exports = (robot) ->
     position = 0
     for user in sortedRanking
       position += 1
-      message += "#{position}.---  Agent  #{user.name} --- Number of imprecation(s) `#{user.points}`\n"
+      message += "#{position}.   Agent  #{user.name}        Number of imprecation(s) `#{user.points}`\n"
 
     msg.send message
 
