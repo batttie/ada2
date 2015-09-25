@@ -14,7 +14,7 @@ module.exports = (robot) ->
     item = res.match[2]
     res.send "Ok @#{agent} you have `#{count}` of *#{item}*"
     robot.brain.data.inventory[agent] ||= []
-    event = {item: item, agent: agent, number: count}
+    event = {item: item, number: count}
     robot.brain.data.inventorty[agent].push event
     res.send "#{event.agent} has #{event.number} of  #{event.item}"
 #
