@@ -59,7 +59,7 @@ module.exports = (robot) ->
 
   robot.respond /my violations??/i, (msg) ->
     user = msg.message.user.name
-    if (robot.brain.data.credit[user]?) {...}
+    if (robot.brain.data.credit[user]?) {undefined}
       response = "You are an excellent example of morality,\n Be well."
       msg.send response
     else
