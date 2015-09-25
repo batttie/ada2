@@ -84,4 +84,5 @@ module.exports = (robot) ->
 
   robot.respond /forget all violations/i, (msg) ->
     delete robot.brain.data.credit
+    robot.brain.data.credit ||= {}
     msg.send "Violations cleared"
