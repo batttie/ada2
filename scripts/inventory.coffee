@@ -7,13 +7,13 @@
 #
 #
 module.exports = (robot) ->
-  robot.brain.data.inventory ||= {}
+  robot.brain.data.iinventory ||= {}
   robot.hear /i have (.*) (.*)/i, (res) ->
-    agent = res.message.user.name
-    count = res.match[1]
-    item = res.match[2]
-    res.send "Ok @#{agent} you have `#{count}` of *#{item}*"
-    robot.brain.data.inventory[agent] ||= []
+    agentc = res.message.user.name
+    countn = res.match[1]
+    iitem = res.match[2]
+    res.send "Ok @#{agentc} you have `#{countn}` of *#{iitem}*"
+    robot.brain.data.iinventory[agent] ||= []
     event = {item: item, number: count}
     robot.brain.data.inventorty[agent].push event
     res.send "#{event.agent} has #{event.number} of  #{event.item}"
