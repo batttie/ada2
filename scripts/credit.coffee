@@ -63,10 +63,10 @@ module.exports = (robot) ->
       response = "You are an excellent example of morality,\n Be well."
       msg.send response
     else
-     response = "#{user}, you have broken the morality statue `#{robot.brain.data.credit[user].length}` time(s):\n"
-     for credit in robot.brain.data.credit[user]
-       response += "#{credit.perpetrator} for saying `#{credit.reason}`\n"
-     msg.send response
+      response = "#{user}, you have broken the morality statue `#{robot.brain.data.credit[user].length}` time(s):\n"
+      for credit in robot.brain.data.credit[user]
+        response += "#{credit.perpetrator} for saying `#{credit.reason}`\n"
+      msg.send response
 
   robot.respond /(|show )ranking/i, (msg) ->
     ranking = []
