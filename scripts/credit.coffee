@@ -8,7 +8,8 @@
 #   None
 #
 # Commands:
-#   @hubot my violations - will send your current violations
+#   hubot my violations - will list your morality violations
+#   hubot show rankings - will rank agents based on violations of morality
 # Author:
 #   batttie
 
