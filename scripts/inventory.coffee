@@ -10,8 +10,8 @@ module.exports = (robot) ->
   robot.brain.data.inventory ||= {}
   robot.hear /i have (.*) (.*)/i, (res) ->
     agent = res.message.user.name
-    item = res.match[1]
-    count = res.match[2]
+    count = res.match[1]
+    item = res.match[2]
     res.send "Ok @#{agent} you have `#{count}` of *#{item}*"
 
 #    robot.brain.data.credit[perp] ||= []
