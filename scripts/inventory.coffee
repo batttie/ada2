@@ -12,7 +12,7 @@ module.exports = (robot) ->
     agent = res.message.user.name
     item = res.match[1]
     count = res.match[2]
-    res.send 'Ok @#{agent} you have `#{count}` of *#{item}*'
+    res.send "Ok @#{agent} you have `#{count}` of *#{item}*"
 
 #    robot.brain.data.credit[perp] ||= []
 #    event = {reason: reason, perpetrator: perp}
