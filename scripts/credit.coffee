@@ -55,13 +55,13 @@ module.exports = (robot) ->
     robot.brain.data.credit[perp] ||= []
     event = {reason: reason, perpetrator: perp}
     robot.brain.data.credit[perp].push event
-    msg.send "#{event.perpetrator} has been fined for saying thet word #{event.reason}"
+    msg.send "#{event.perpetrator} has been fined for saying thet word `#{event.reason}`"
 
   robot.respond /my violations??/i, (msg) ->
     user = msg.message.user.name
     response = "#{user}, #{robot.brain.data.credit[user].length} time(s) you have broken the morality statue:\n"
     for credit in robot.brain.data.credit[user]
-      response += "#{credit.perpetrator} for saying #{credit.reason}\n"
+      response += "#{credit.perpetrator} for saying `#{credit.reason}`\n"
     msg.send response
 
   robot.respond /(|show )ranking/i, (msg) ->
