@@ -17,18 +17,18 @@ module.exports = (robot) ->
     ievent = {agent: agentc, item: iitem, number: countn}
     robot.brain.data.iinventory[agentc].push ievent
     res.send "#{ievent.agent} has #{ievent.number} of  #{ievent.item}"
-#
-#  robot.respond /my violations??/i, (msg) ->
-#    user = msg.message.user.name
-#    if robot.brain.data.credit[user] is undefined
-#      response = "You are an excellent example of morality,\n Be well."
-#      msg.send response
-#    else
-#      response = "#{user}, you have broken the morality statue `#{robot.brain.data.credit[user].length}` time(s):\n"
-#      for credit in robot.brain.data.credit[user]
-#        response += "#{credit.perpetrator} for saying `#{credit.reason}`\n"
-#      msg.send response
-#
+
+  robot.respond /my inventory??/i, (res) ->
+    agentc = res.message.user.name
+    if robot.brain.data.iinventory[agentc] is undefined
+      response = "I do not know what is in your inventory."
+      res.send response
+    else
+      response = "#{agentc}, you have broken the morality statue `#{robot.brain.data.credit[user].length}` time(s):\n"
+      for iinventory in robot.brain.data.inventory[agentc]
+        response += "#{iinventory.item}  `#{iinventory.number}`\n"
+      res.send response
+
 #  robot.respond /(|show )ranking/i, (msg) ->
 #    ranking = []
 #
