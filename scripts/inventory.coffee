@@ -13,9 +13,9 @@ module.exports = (robot) ->
     countn = res.match[1]
     iitem = res.match[2]
     res.send "Ok @#{agentc} you have `#{countn}` of *#{iitem}*"
-    robot.brain.data.iinventory[agent] ||= []
+    robot.brain.data.iinventory[agentc] ||= []
     ievent = {agent: agentc, item: iitem, number: countn}
-    robot.brain.data.inventorty[agent].push ievent
+    robot.brain.data.inventorty[agentc].push ievent
     res.send "#{ievent.agent} has #{event.number} of  #{event.item}"
 #
 #  robot.respond /my violations??/i, (msg) ->
