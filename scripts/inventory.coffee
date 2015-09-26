@@ -24,7 +24,7 @@ module.exports = (robot) ->
       response = "I do not know what is in your inventory."
       res.send response
     else
-      response = "#{agentc}, you have broken the morality statue `#{robot.brain.data.credit[user].length}` time(s):\n"
+      response = "#{agentc}, this is your inventory:\n"
       for iinventory in robot.brain.data.inventory[agentc]
         response += "#{iinventory.item}  `#{iinventory.number}`\n"
       res.send response
