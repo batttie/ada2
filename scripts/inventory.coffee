@@ -33,7 +33,7 @@ module.exports = (robot) ->
     agentc = res.message.user.name
     delete robot.brain.data.iinventory[agentc]
     robot.brain.data.iinventory[agentc] ||= []
-    msg.send "Inventory cleared"
+    res.send "Inventory cleared"
 
 #  robot.respond /(|show )ranking/i, (msg) ->
 #    ranking = []
