@@ -25,7 +25,7 @@ module.exports = (robot) ->
       res.send response
     else
       response = "#{agentc}, this is your inventory:\n"
-      for iinventory in robot.brain.data.inventory[agentc]
+      for iinventory in robot.brain.data.iinventory[agentc]
         response += "#{iinventory.item}  `#{iinventory.number}`\n"
       res.send response
 
