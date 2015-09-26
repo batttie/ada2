@@ -29,6 +29,12 @@ module.exports = (robot) ->
         response += "#{iinventory.item}  `#{iinventory.number}`\n"
       res.send response
 
+  robot.respond /clear my inventory/i, (res) ->
+    agentc = res.message.user.name
+    delete robot.brain.data.iinventory[agentc]
+    robot.brain.data.iinventory[agentc] ||= []
+    msg.send "Inventory cleared"
+
 #  robot.respond /(|show )ranking/i, (msg) ->
 #    ranking = []
 #
