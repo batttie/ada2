@@ -90,4 +90,4 @@ module.exports = (robot) ->
   robot.respond /forget all violations/i, (msg) ->
     perp = msg.message.user.name
     delete robot.brain.data.credit[perp]
-      msg.send "Your violations cleared"
+    msg.send "Your violations cleared"
