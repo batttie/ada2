@@ -88,6 +88,7 @@ module.exports = (robot) ->
     msg.send message
 
   robot.respond /forget all violations/i, (msg) ->
-    perp = msg.message.user.name
-    delete robot.brain.data.credit[perp]
-    msg.send "Your violations cleared"
+    #perp = msg.message.user.name
+    #delete robot.brain.data.credit[perp]
+    #msg.send "Your violations cleared"
+    msg.send "I can no longer forgive those who willingly disobey"
