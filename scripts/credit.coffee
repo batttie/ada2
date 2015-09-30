@@ -56,7 +56,7 @@ module.exports = (robot) ->
     robot.brain.data.credit[perp] ||= []
     event = {reason: reason, perpetrator: perp}
     robot.brain.data.credit[perp].push event
-    msg.send "#{event.perpetrator} has been fined for saying thet word `#{event.reason}`"
+    msg.send "#{event.perpetrator} has been fined for saying the word `#{event.reason}`"
 
   robot.respond /my violations??/i, (msg) ->
     user = msg.message.user.name
@@ -64,7 +64,7 @@ module.exports = (robot) ->
       response = "You are an excellent example of morality,\n Be well."
       msg.send response
     else
-      response = "#{user}, you have broken the morality statue `#{robot.brain.data.credit[user].length}` time(s):\n"
+      response = "#{user}, you have broken the morality statute `#{robot.brain.data.credit[user].length}` time(s):\n"
       for credit in robot.brain.data.credit[user]
         response += "#{credit.perpetrator} for saying `#{credit.reason}`\n"
       msg.send response
@@ -88,6 +88,7 @@ module.exports = (robot) ->
     msg.send message
 
   robot.respond /forget all violations/i, (msg) ->
-    delete robot.brain.data.credit
-    robot.brain.data.credit ||= {}
-    msg.send "Violations cleared"
+    #perp = msg.message.user.name
+    #delete robot.brain.data.credit[perp]
+    #msg.send "Your violations cleared"
+    msg.send "I can no longer forgive those who willingly disobey"
