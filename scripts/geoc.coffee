@@ -1,6 +1,6 @@
 geocoder = require('geocoder')
 
-exports.modules = (robot) ->
+exports.module = (robot) ->
   robot.hear /geo (.*)/i, res ->
     gqueary = res.match[1]
     geocoder.geocode(gqueary)( err, data ) ->
