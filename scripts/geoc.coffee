@@ -6,5 +6,4 @@ module.exports = (robot) ->
     geocoder.geocode(gqueary)( err, data ) ->
      res.send err
      res.send data
-  robot.catchAll (response) ->
-  console.log('catch all: ', response)
+
