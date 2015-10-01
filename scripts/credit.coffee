@@ -69,7 +69,7 @@ module.exports = (robot) ->
     'beat-off',
     'beatyourmeat',
     'beaver',
-    'bestial,
+    'bestial',
     'bestiality',
     'biatch',
     'bicurious',
