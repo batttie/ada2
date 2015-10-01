@@ -678,5 +678,5 @@ module.exports = (robot) ->
     msg.send "I can no longer forgive those who willingly disobey"
     
   robot.respond /how many naughty words do you know/i, (msg) ->
-    wordnum = word.lenght
+    wordnum = word.length
     msg.send "i know #{wordnum} profanties"
