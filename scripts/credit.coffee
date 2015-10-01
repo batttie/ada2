@@ -244,7 +244,7 @@ module.exports = (robot) ->
     'ejaculation',
     'excrement',
     'facefucker',
-    'faeces',
+    'faeces'
     ]
   regex = new RegExp('(?:^|\\s)(' + words.join('|') + ')(?:\\s|\\.|\\?|!|$)', 'i');
   robot.brain.data.credit ||= {}
