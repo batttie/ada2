@@ -83,14 +83,14 @@ module.exports = (robot) ->
     'bitches',
     'bitchez',
     'bitchin',
-    'bitching
+    'bitching',
     'bitchslap',
     'bitchy',
     'blow',
     'blowjob',
     'boang',
     'bogan',
-    'bohunk,
+    'bohunk',
     'bollick',
     'bollock',
     'boner',
@@ -114,7 +114,7 @@ module.exports = (robot) ->
     'bullcrap',
     'bulldike',
     'bulldyke',
-    'bullshit,
+    'bullshit',
     'bumblefuck',
     'bumfuck',
     'bunga',
@@ -243,8 +243,7 @@ module.exports = (robot) ->
     'ejaculating' ,
     'ejaculation',
     'excrement',
-    'facefucker',
-    'faeces'
+    'facefucker'
   ]
   regex = new RegExp('(?:^|\\s)(' + words.join('|') + ')(?:\\s|\\.|\\?|!|$)', 'i');
   robot.brain.data.credit ||= {}
