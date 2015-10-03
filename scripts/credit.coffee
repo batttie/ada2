@@ -635,7 +635,7 @@ module.exports = (robot) ->
   robot.hear regex, (msg) ->
     perp = msg.message.user.name
     reason = msg.match[0]
-    robot.send {room: res.envelope.user.name}, 'You have been fined one credit for a violation of the verbal morality statute.\n Be well.'
+    robot.send {room: msg.envelope.user.name}, 'You have been fined one credit for a violation of the verbal morality statute.\n Be well.'
 
     robot.brain.data.credit[perp] ||= []
     event = {reason: reason, perpetrator: perp}
