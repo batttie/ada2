@@ -635,12 +635,12 @@ module.exports = (robot) ->
   robot.hear regex, (msg) ->
     perp = msg.message.user.name
     reason = msg.match[0]
-    msg.send 'You have been fined one credit for a violation of the verbal morality statute.\n Be well.'
+    robot.send {room: msg.envelope.user.name}, 'You have been fined one credit for a violation of the verbal morality statute.\n Be well.'
 
     robot.brain.data.credit[perp] ||= []
     event = {reason: reason, perpetrator: perp}
     robot.brain.data.credit[perp].push event
-    msg.send "#{event.perpetrator} has been fined for saying the word `#{event.reason}`"
+    robot.send {room: msg.envelope.user.name}, "#{event.perpetrator} has been fined for saying the word `#{event.reason}`"
 
   robot.respond /my violations??/i, (msg) ->
     user = msg.message.user.name
@@ -680,3 +680,15 @@ module.exports = (robot) ->
   robot.respond /how many naughty words do you know/i, (msg) ->
     wordnum = words.length
     msg.send "i know #{wordnum} profanties"
+    
+  robot.respond /show (.*) violations??/i, (msg) ->
+    perp = msg.match[1]
+    user = msg.message.user.name
+    if robot.brain.data.credit[perp] is undefined
+      response = "They are an excellent example of morality,\n Be well."
+      msg.send response
+    else
+      response = "#{perp}, has broken the morality statute `#{robot.brain.data.credit[perp].length}` time(s):\n"
+      for credit in robot.brain.data.credit[perp]
+        response += "#{credit.perpetrator} for saying `#{credit.reason}`\n"
+      msg.send response
